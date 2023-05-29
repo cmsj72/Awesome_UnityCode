@@ -29,12 +29,12 @@ public class MissionPillarSubject : InteractableObject, ISubject
         observers.Add(GameManager.instance.propMissionPillarObserver);
     }
 
-    public void RegisterObserver(ref IObserver _observer)
+    public void RegisterObserver(IObserver _observer)
     {
         this.observers.Add(_observer);
     }
 
-    public void RemoveObserver(ref IObserver _observer)
+    public void RemoveObserver(IObserver _observer)
     {
         this.observers.Remove(_observer);
     }
@@ -47,11 +47,11 @@ public class MissionPillarSubject : InteractableObject, ISubject
         }
     }
 
-    //  ÇÃ·¹ÀÌ¾î°¡ »óÈ£ÀÛ¿ë½Ã ¸®½ºÆ®¿¡ ÀúÀåµÈ ¿ÉÀú¹ö¿¡°Ô °»½ÅÀ» ÇÏ´Â ÇÔ¼ö
+    //  í”Œë ˆì´ì–´ê°€ ìƒí˜¸ì‘ìš©ì‹œ ë¦¬ìŠ¤íŠ¸ì— ì €ì¥ëœ ì˜µì €ë²„ì—ê²Œ ê°±ì‹ ì„ í•˜ëŠ” í•¨ìˆ˜
     public override void Interaction()
     {
         if (glowObject.activeSelf) return;
-        Debug.Log("Interaction ÁøÀÔ");
+        Debug.Log("Interaction ì§„ì…");
         NotifyObservers();
         glowObject.SetActive(true);
     }
