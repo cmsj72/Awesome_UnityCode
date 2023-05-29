@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface ISubject
 {
-    void RegisterObserver(ref IObserver _observer);
-    void RemoveObserver(ref IObserver _observer);
+    void RegisterObserver(IObserver _observer);
+    void RemoveObserver(IObserver _observer);
     void NotifyObservers();
 }
 
